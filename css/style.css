@@ -1,0 +1,448 @@
+/* Global Styles */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #fff !important;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+    margin: 0 10px;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: 
+        linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%),
+        url("../img/turismo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section h1 {
+    animation: slideInDown 0.8s ease;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+}
+
+.hero-section p {
+    animation: slideInUp 0.8s ease;
+    font-size: 1.3rem;
+}
+
+.hero-section .btn {
+    animation: fadeIn 1.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Destination Cards */
+.destination-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border: none;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.destination-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination-card:hover img {
+    transform: scale(1.1);
+}
+
+.destination-card .card-body {
+    padding: 1.5rem;
+}
+
+.destination-card .card-title {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Package Cards */
+.package-card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    height: 100%;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.package-card .card-header {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    padding: 1.5rem;
+}
+
+.price-tag {
+    color: #007bff;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.package-featured {
+    transform: scale(1.02);
+    position: relative;
+}
+
+.badge-popular {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    background: #dc3545;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.package-card .list-unstyled li {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.package-card .btn {
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.package-card .btn:hover {
+    transform: scale(1.02);
+}
+
+/* Feature Boxes */
+.feature-box {
+    background: white;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box i {
+    color: #007bff;
+}
+
+.feature-box h5 {
+    color: #333;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.feature-box p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    border: none;
+    border-top: 4px solid #007bff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card .card-body {
+    padding: 1.5rem;
+}
+
+.testimonial-card .card-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Contact Boxes */
+.contact-box {
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-5px);
+}
+
+.contact-box i {
+    color: #007bff;
+}
+
+.contact-box h5 {
+    color: #333;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.contact-box p {
+    color: #666;
+}
+
+/* Footer */
+footer {
+    border-top: 3px solid #007bff;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #007bff !important;
+}
+
+.social-links a {
+    font-size: 1.3rem;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: #007bff;
+    border-color: #007bff;
+    transform: translateY(-2px);
+}
+
+.btn-outline-success:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-success:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Newsletter Section */
+.bg-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.input-group .form-control {
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 5px 0 0 5px;
+}
+
+.input-group .btn-light {
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 0 5px 5px 0;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.input-group .btn-light:hover {
+    background: #f0f0f0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .display-5 {
+        font-size: 1.8rem;
+    }
+
+    .package-featured {
+        transform: scale(1);
+    }
+
+    .hero-section {
+        height: 60vh;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Transitions Suaves */
+section {
+    transition: all 0.3s ease;
+}
+
+/* Card Shadows */
+.card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Animations */
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
